@@ -1,0 +1,70 @@
+:root {
+  color-scheme: light;
+  --ink: #323521;
+  --muted: #575a43;
+  --green: #314f2b;
+  --paper: #fbf8eb;
+  --line: #dedac7;
+  font-family: ui-rounded, "Hiragino Sans", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.56;
+  background: var(--paper);
+  color: var(--ink);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: var(--green); text-underline-offset: .25em; }
+img { display: block; max-width: 100%; }
+.wrap { width: min(1100px, calc(100% - 48px)); margin: 0 auto; }
+.site-header { background: #fffdf5; }
+.header-layout, .footer-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.header-layout { padding: .82rem 0; }
+.brand, nav { display: flex; align-items: center; gap: .95rem; flex-wrap: wrap; }
+.brand { gap: .62rem; font-weight: 740; text-decoration: none; }
+.brand img { border-radius: 8px; }
+nav a { font-size: .92rem; text-decoration: none; }
+nav a:hover, nav a[aria-current] { text-decoration: underline; }
+.hero {
+  background: linear-gradient(90deg, #f8f5e7f5 5%, #f8f5e7b0 55%, #f8f5e730), url("assets/meadow.jpg") center 50% / cover;
+  border-block: 1px solid var(--line);
+  padding: clamp(2.5rem, 6vw, 5.5rem) 0;
+}
+.hero-layout { display: grid; grid-template-columns: 1.35fr 1fr; align-items: center; gap: clamp(1.8rem, 6vw, 5rem); }
+.hero-copy { max-width: 35rem; }
+.hero-icon { border-radius: 24px; box-shadow: 0 4px 12px #233b2440; }
+h1 { font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.09; margin: .44em 0 .24em; letter-spacing: -.055em; }
+.lead { font-size: clamp(1.25rem, 2.5vw, 1.9rem); color: var(--green); font-weight: 740; margin: 0; }
+.intro { font-size: 1.07rem; margin: .85rem 0 1.3rem; }
+.devices { font-size: .88rem; color: var(--muted); }
+.game-screen {
+  justify-self: center;
+  width: min(100%, 240px);
+  height: auto;
+  border: 5px solid #233522;
+  border-radius: 24px;
+  box-shadow: 0 12px 28px #2335224a;
+}
+.modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 2.5rem 0 3.5rem; }
+.modes section { border-top: 2px solid #75945c; }
+h2 { font-size: 1.22rem; margin: .9rem 0 .15rem; }
+p { margin: .25rem 0 1.1rem; }
+.reading { width: min(740px, calc(100% - 48px)); padding: 2rem 0 4rem; }
+.reading h1 { font-size: clamp(2.6rem, 5vw, 4rem); margin: .55em 0 .65em; }
+.reading section { border-top: 1px solid var(--line); padding: .65rem 0; }
+address { border-block: 1px solid var(--line); padding: .85rem 0; font-style: normal; }
+address a { margin-inline-start: .4em; }
+footer { border-top: 1px solid var(--line); }
+.footer-layout { padding: 1.15rem 0; }
+:focus-visible { outline: 2px solid #24684b; outline-offset: .24rem; }
+@media (max-width: 640px) {
+  .wrap, .reading { width: calc(100% - 36px); }
+  .hero-layout, .modes { grid-template-columns: 1fr; }
+  .game-screen { width: min(72%, 230px); }
+  .hero-icon { width: 74px; height: 74px; border-radius: 17px; }
+  .modes { gap: .9rem; }
+}
